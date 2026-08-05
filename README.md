@@ -1,6 +1,6 @@
 # Vizsgaremek - MMenza
 
-Egy intelligens iskolai menzaalkalmazás, amely segít minimalizálni az ételpazarlást és modernizálja az ebédlemondás folyamatát.
+Egy iskolai menzaalkalmazás, amely segít minimalizálni az ételpazarlást és modernizálja az ebédlemondás folyamatát.
 
 ## Csapattagok és Szerepkörök
 *   **[Magyar Dávid]** - Projektmenedzser (PM) & Backend fejlesztő

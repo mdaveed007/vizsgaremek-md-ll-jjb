@@ -1,4 +1,4 @@
-# 🚀 Vizsgaremek - [Projekt Neve]
+# Vizsgaremek - MMenza
 
 Egy intelligens iskolai menzaalkalmazás, amely segít minimalizálni az ételpazarlást és modernizálja az ebédlemondás folyamatát.
 

@@ -25,7 +25,7 @@ A szoftver funkcióit a különböző felhasználói szerepkörök alapján stru
 
 ---
 
-## Alkalmazott Technológiák (Tech Stack)
+## Alkalmazott Technológiák
 *   **Frontend:**
 *   **Backend:**
 *   **Adatbázis:** MySQL

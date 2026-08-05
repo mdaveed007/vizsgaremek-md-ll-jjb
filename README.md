@@ -2,7 +2,7 @@
 
 Egy intelligens iskolai menzaalkalmazás, amely segít minimalizálni az ételpazarlást és modernizálja az ebédlemondás folyamatát.
 
-## 👥 Csapattagok és Szerepkörök
+## Csapattagok és Szerepkörök
 *   **[Magyar Dávid]** - Projektmenedzser (PM) & Backend fejlesztő
 *   **[Jónás János Balázs]** - Frontend fejlesztő
 *   **[Lébenthal Levente]** - Adatbázis fejlesztő

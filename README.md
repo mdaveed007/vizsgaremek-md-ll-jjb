@@ -1,6 +1,6 @@
-# Vizsgaremek - MMenza
+# Vizsgaremek - Beefy
 
-Egy iskolai menzaalkalmazás, amely segít minimalizálni az ételpazarlást és modernizálja az ebédlemondás folyamatát.
+Egy alkalmazás, mely modernizálja a steak rendelését, és fogyasztását.
 
 ## Csapattagok és Szerepkörök
 *   **[Magyar Dávid]** - Projektmenedzser (PM) & Backend fejlesztő
@@ -11,17 +11,15 @@ Egy iskolai menzaalkalmazás, amely segít minimalizálni az ételpazarlást és
 
 ## Tervezett Funkciók
 
-A szoftver funkcióit a különböző felhasználói szerepkörök alapján strukturáltuk:
+Az alkalmazást felhasználó típusoként két részre osztjuk: (Még nincs kész a második)
 
-### Vendég / Diák funkciók (Kliens oldal)
+### Vendég funkciók (Kliens oldal)
 *   **Regisztráció és Biztonságos Bejelentkezés:** Felhasználói fiók létrehozása érvényes adatokkal.
-*   **Étkezés Lemondása:** Egyetlen gombnyomással lemondható az adott napi ebéd az előre meghatározott időpontig (pl. reggel 8-ig).
+*   **Információk:** A felhasználó megtekintheti az elérhető kuponjait, az éttermeket és a menüiket.
+*   **Asztal foglalás:** Foglalhat asztalt a kiválasztott étteremben, hány fő érkezik.
+*   **Előre rendelhető menü:** Megrendelheti előre a kiválasztott ételt, hogy elkészüljön érkezéséig.
+*   **Ha a társaság miatt érkezett:** A fent említett funkció kapcsolható, így élvezheti a társaságát, míg az étel elkészül.
 *   **Ételértékelési Rendszer:** Csillagos (1-5) és szöveges értékelés leadása az elfogyasztott ételekről a minőségbiztosítás érdekében.
-
-### Adminisztrátor / Konyhai vezető funkciók (Kezelői oldal)
-*   **Interaktív Vezérlőpult:** Élő statisztika a napi szükséges adagszámokról, diagramok az ételpazarlás mértékéről.
-*   **Menümenedzsment:** Új ételek felvitele, módosítása, törlése az adatbázisból egy admin felületen keresztül.
-*   **Felhasználók kezelése:** Diákok adatainak, jogosultságainak és étkezési státuszának adminisztrátori ellenőrzése.
 
 ---
 

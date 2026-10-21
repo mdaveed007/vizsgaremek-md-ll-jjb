@@ -1,8 +1,6 @@
 package com.primenready.spring.dto.request;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,4 +24,8 @@ public class CreateUserRequest {
     @Size(min = 6, message = "A jelszó legalább 6 karakter hosszú")
     private String password;
 
+    @NotNull(message = "Az életkor megadása kötelező")
+    @Min(value = 0, message = "Az életkor nem lehet negatív szám")
+    @Max(value = 120, message = "Az életkor valósnak kell lennie (maximum 120)")
+    private Integer age;
 }

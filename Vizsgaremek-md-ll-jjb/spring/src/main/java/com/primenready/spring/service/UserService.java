@@ -7,8 +7,12 @@ import com.primenready.spring.model.User;
 import com.primenready.spring.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -40,5 +44,27 @@ public class UserService {
                 .email(saved.getEmail())
                 .role(saved.getRole())
                 .build();
+    }
+
+    public UserResponse toResponseDto(User user) {
+        return UserResponse.builder()
+                .id(user.getId())
+                .username(user.getUsername())
+                .email(user.getEmail())
+                .age(user.getAge())
+                .role(user.getRole())
+                .build();
+    }
+
+    public List<UserResponse> getAll() {
+        return userRepository.findAllActive().stream()
+                .map(this::toResponseDto)
+                .toList();
+    }
+
+    public UserResponse getById(Integer id) {
+        User user = userRepository.findActiveById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Nincs ilyen felhasználó: " + id));
+        return toResponseDto(user);
     }
 }

@@ -56,13 +56,13 @@ public class UserService {
                 .build();
     }
 
-    public List<UserResponse> getAll() {
+    public List<UserResponse> getAllActive() {
         return userRepository.findAllActive().stream()
                 .map(this::toResponseDto)
                 .toList();
     }
 
-    public UserResponse getById(Integer id) {
+    public UserResponse getActiveById(Integer id) {
         User user = userRepository.findActiveById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Nincs ilyen felhasználó: " + id));
         return toResponseDto(user);

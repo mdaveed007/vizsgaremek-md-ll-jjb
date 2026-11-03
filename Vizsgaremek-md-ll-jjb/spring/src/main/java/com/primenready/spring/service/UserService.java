@@ -1,10 +1,10 @@
 package com.primenready.spring.service;
 
+import com.primenready.spring.dto.request.ChangePasswordRequest;
 import com.primenready.spring.dto.request.CreateUserRequest;
 import com.primenready.spring.dto.request.UpdateUserRequest;
 import com.primenready.spring.dto.response.UserResponse;
-import com.primenready.spring.exception.EmailAlreadyExistsException;
-import com.primenready.spring.exception.ResourceNotFoundException;
+import com.primenready.spring.exception.*;
 import com.primenready.spring.model.Role;
 import com.primenready.spring.model.User;
 import com.primenready.spring.repository.UserRepository;
@@ -28,7 +28,11 @@ public class UserService {
     @Transactional
     public UserResponse createUser(CreateUserRequest request) {
         if (userRepository.existsByEmail(request.getEmail())){
-            throw new IllegalStateException("Ez az email cím már foglalt: " + request.getEmail());
+            throw new EmailAlreadyExistsException("Ez az email cím már foglalt: " + request.getEmail());
+        }
+
+        if (userRepository.existsByUsername(request.getUsername())){
+            throw new UsernameAlreadyExistsException("Ez a felhasználó név már foglalt: " + request.getUsername());
         }
 
         User user = User.builder()
@@ -68,7 +72,7 @@ public class UserService {
 
     public UserResponse getActiveById(Integer id) {
         User user = userRepository.findActiveById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Nincs ilyen felhasználó: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Nincs ilyen felhasználó: " + id));
         return toResponseDto(user);
     }
 
@@ -79,6 +83,10 @@ public class UserService {
 
         if (!user.getEmail().equals(request.getEmail()) && userRepository.existsByEmail(request.getEmail())) {
             throw new EmailAlreadyExistsException("Ez az email cím már foglalt" + request.getEmail());
+        }
+
+        if (!user.getUsername().equals(request.getUsername()) && userRepository.existsByUsername(request.getUsername())) {
+            throw new UsernameAlreadyExistsException("Ez a felhasználó név már foglalt" + request.getUsername());
         }
 
         user.setUsername(request.getUsername());
@@ -92,10 +100,28 @@ public class UserService {
     @Transactional
     public void softDelete(Integer id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Nincs ilyen felhasználó: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Nincs ilyen felhasználó: " + id));
 
         user.setIsDeleted(true);
         user.setDeletedAt(LocalDateTime.now());
+
+        userRepository.save(user);
+    }
+
+    @Transactional
+    public void changePassword(Integer id, ChangePasswordRequest request) {
+        User user = userRepository.findActiveById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Nincs ilyen felhasználó: " + id));
+
+        if (!request.getNewPassword().equals(request.getConfirmPassword())) {
+            throw new PasswordMismatchException("Az új jelszó és a megerősítése nem egyezik!");
+        }
+
+        if (!passwordEncoder.matches(request.getOldPassword(), user.getPassword())) {
+            throw new IncorrectPasswordException("A jelenlegi jelszó nem megfelelő");
+        }
+
+        user.setPassword(passwordEncoder.encode(request.getNewPassword()));
 
         userRepository.save(user);
     }

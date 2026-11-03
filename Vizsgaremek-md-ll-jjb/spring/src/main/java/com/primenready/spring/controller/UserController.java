@@ -1,5 +1,6 @@
 package com.primenready.spring.controller;
 
+import com.primenready.spring.dto.request.ChangePasswordRequest;
 import com.primenready.spring.dto.request.CreateUserRequest;
 import com.primenready.spring.dto.request.UpdateUserRequest;
 import com.primenready.spring.dto.response.UserResponse;
@@ -25,7 +26,7 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<List<UserResponse>> getAll() {
+    public ResponseEntity<List<UserResponse>> getAllActive() {
         return ResponseEntity.ok(userService.getAllActive());
     }
 
@@ -42,6 +43,12 @@ public class UserController {
     @DeleteMapping
     public ResponseEntity<Void> softDelete(@PathVariable Integer id) {
         userService.softDelete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> changePassword(@PathVariable Integer id, @RequestBody ChangePasswordRequest request) {
+        userService.changePassword(id, request);
         return ResponseEntity.noContent().build();
     }
 }

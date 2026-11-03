@@ -1,6 +1,7 @@
 package com.primenready.spring.controller;
 
 import com.primenready.spring.dto.request.CreateUserRequest;
+import com.primenready.spring.dto.request.UpdateUserRequest;
 import com.primenready.spring.dto.response.UserResponse;
 import com.primenready.spring.service.UserService;
 import jakarta.validation.Valid;
@@ -31,5 +32,16 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<UserResponse> getActiveById(@PathVariable Integer id) {
         return ResponseEntity.ok(userService.getActiveById(id));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<UserResponse> updateUser(@PathVariable Integer id, @RequestBody UpdateUserRequest request) {
+        return ResponseEntity.ok(userService.updateUser(id, request));
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Void> softDelete(@PathVariable Integer id) {
+        userService.softDelete(id);
+        return ResponseEntity.noContent().build();
     }
 }

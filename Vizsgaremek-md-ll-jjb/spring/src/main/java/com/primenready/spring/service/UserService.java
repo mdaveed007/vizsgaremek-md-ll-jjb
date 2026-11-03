@@ -1,7 +1,10 @@
 package com.primenready.spring.service;
 
 import com.primenready.spring.dto.request.CreateUserRequest;
+import com.primenready.spring.dto.request.UpdateUserRequest;
 import com.primenready.spring.dto.response.UserResponse;
+import com.primenready.spring.exception.EmailAlreadyExistsException;
+import com.primenready.spring.exception.ResourceNotFoundException;
 import com.primenready.spring.model.Role;
 import com.primenready.spring.model.User;
 import com.primenready.spring.repository.UserRepository;
@@ -12,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -66,5 +70,33 @@ public class UserService {
         User user = userRepository.findActiveById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Nincs ilyen felhasználó: " + id));
         return toResponseDto(user);
+    }
+
+    @Transactional
+    public UserResponse updateUser(Integer id, UpdateUserRequest request) {
+        User user = userRepository.findActiveById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Nincs ilyen felhasználó: " + id));
+
+        if (!user.getEmail().equals(request.getEmail()) && userRepository.existsByEmail(request.getEmail())) {
+            throw new EmailAlreadyExistsException("Ez az email cím már foglalt" + request.getEmail());
+        }
+
+        user.setUsername(request.getUsername());
+        user.setEmail(request.getEmail());
+        user.setAge(request.getAge());
+
+        User saved = userRepository.save(user);
+        return toResponseDto(saved);
+    }
+
+    @Transactional
+    public void softDelete(Integer id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Nincs ilyen felhasználó: " + id));
+
+        user.setIsDeleted(true);
+        user.setDeletedAt(LocalDateTime.now());
+
+        userRepository.save(user);
     }
 }

@@ -26,6 +26,6 @@ public class CreateUserRequest {
 
     @NotNull(message = "Az életkor megadása kötelező")
     @Min(value = 0, message = "Az életkor nem lehet negatív szám")
-    @Max(value = 120, message = "Az életkor valósnak kell lennie (maximum 120)")
+    @Max(value = 120, message = "Az életkornak valósnak kell lennie (maximum 120)")
     private Integer age;
 }

@@ -63,14 +63,4 @@ public class GlobalExceptionHandler {
                 .build();
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
     }
-
-//    @ExceptionHandler(ResourceNotFoundException.class)
-//    public ResponseEntity<String> handleResourceNotFound(ResourceNotFoundException ex) {
-//        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-//    }
-//
-//    @ExceptionHandler(EmailAlreadyExistsException.class)
-//    public ResponseEntity<String> handleEmailAlreadyExists(EmailAlreadyExistsException ex) {
-//        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
-//    }
 }

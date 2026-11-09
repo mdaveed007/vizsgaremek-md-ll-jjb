@@ -29,5 +29,15 @@ public class AuthService {
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             throw new IncorrectPasswordException("Hibás jelszó vagy felhasználó név");
         }
+
+        String mockToken = "mock-jwt-token-teszteleshez";
+
+        return AuthResponse.builder()
+                .token(mockToken)
+                .tokenType("Bearer")
+                .username(user.getUsername())
+                .email(user.getEmail())
+                .role(user.getRole().name())
+                .build();
     }
 }

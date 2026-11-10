@@ -28,10 +28,4 @@ public class Categories {
 
     @Column(name = "updated_at", insertable = false, updatable = false)
     private LocalDateTime updatedAt;
-
-    @Column(name = "deleted_at", insertable = false, updatable = false)
-    private LocalDateTime deletedAt;
-
-    @Column(name = "is_deleted", nullable = false ,columnDefinition = "TINYINT")
-    private Boolean isDeleted;
 }

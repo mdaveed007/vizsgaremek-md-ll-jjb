@@ -1,0 +1,91 @@
+:root {
+  --barna: #1E1200;
+  --piros: #800020; 
+  --sárga: #F9A03F;
+  --szürke: #8C93A8;
+  --fehér: #FFFFFF;  
+}
+
+body {
+  background-color: var(--fehér);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: var(--sárga);
+  padding: 10px 30px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 15px;
+}
+
+.brand-logo {
+  height: 125px;
+  width: auto;
+  display: block;
+  border-radius: 50%;
+}
+
+.navbar-nav .nav-link {
+  color: var(--barna);
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 15px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--fehér);
+  background-color: var(--piros);
+}
+
+.oldal-cim {
+  color: var(--barna);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.kartyaegy {
+  border: 2px solid var(--sárga);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.kartya-kep {
+  height: 180px;
+  background-color: var(--szürke);
+  color: var(--fehér);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.kartyaegy .card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kartyaegy h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--barna);
+}
+
+.kartyaegy p {
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.ar {
+  color: var(--piros);
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: auto;
+}

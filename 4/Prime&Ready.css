@@ -1,0 +1,138 @@
+:root {
+  --barna: #1E1200;
+  --piros: #800020; 
+  --sárga: #F9A03F;
+  --szürke: #8C93A8;
+  --fehér: #FFFFFF;  
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--fehér);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: var(--sárga);
+  padding: 10px 30px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 15px;
+}
+
+.brand-logo {
+  height: 125px;
+  width: auto;
+  display: block;
+  border-radius: 50%;
+}
+
+.navbar-nav .nav-link {
+  color: var(--barna);
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 15px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--fehér);
+  background-color: var(--piros);
+}
+
+.oldal-cim {
+  color: var(--barna);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.kartyaegy {
+  border: 2px solid var(--sárga);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.kartya-kep {
+  height: 180px;
+  background-color: var(--szürke);
+  color: var(--fehér);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.kartyaegy .card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kartyaegy h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--barna);
+}
+
+.kartyaegy p {
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.ar {
+  color: var(--piros);
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+/* Alsó barna sáv (footer) */
+
+.also-sav {
+  background-color: var(--barna);
+  color: var(--fehér);
+  padding: 60px 0;
+  margin-top: auto;
+  width: 100%;
+}
+
+.also-sav h5 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+  color: var(--fehér);
+}
+
+.also-sav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.also-sav ul li {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #D3D3D3;
+}
+
+.also-sav ul li a {
+  color: #D3D3D3;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.also-sav ul li a:hover {
+  color: var(--sárga);
+}

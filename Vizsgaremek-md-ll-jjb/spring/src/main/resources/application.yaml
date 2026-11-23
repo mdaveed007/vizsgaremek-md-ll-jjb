@@ -3,7 +3,7 @@ spring:
     name: spring
 
   datasource:
-    url: jdbc:mysql://localhost:3306/spring?useUnicode=true&characterEncoding=utf8&serverTimezone=Europe/Budapest
+    url: jdbc:mysql://localhost:3306/primenready?useUnicode=true&characterEncoding=utf8&serverTimezone=Europe/Budapest
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver

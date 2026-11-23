@@ -50,6 +50,6 @@ public class User {
     @Column(name = "is_deleted", nullable = false, columnDefinition = "TINYINT")
     private Boolean isDeleted;
 
-    @OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Orders> orders;
 }

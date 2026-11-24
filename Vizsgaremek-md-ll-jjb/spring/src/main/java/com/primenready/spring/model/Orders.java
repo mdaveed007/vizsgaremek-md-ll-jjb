@@ -27,7 +27,7 @@ public class Orders {
     @Column(name = "status", nullable = false)
     private String status;
 
-    @Column(name = "total_amount", nullable = false)
+    @Column(name = "total_amount", nullable = false, columnDefinition = "DECIMAL")
     private Double totalAmount;
 
     @Column(name = "created_at", insertable = false, updatable = false)

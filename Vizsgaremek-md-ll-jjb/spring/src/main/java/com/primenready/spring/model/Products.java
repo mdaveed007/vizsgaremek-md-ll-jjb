@@ -26,7 +26,7 @@ public class Products {
     @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(name = "price", nullable = false)
+    @Column(name = "price", nullable = false, columnDefinition = "DECIMAL")
     private Double price;
 
     @Column(name = "stock_quantity", nullable = false)

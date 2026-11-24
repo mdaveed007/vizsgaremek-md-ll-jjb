@@ -17,8 +17,8 @@ public class Tables {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "restaurant_id", nullable = false)
-    private Integer restaurantId;
+//    @Column(name = "restaurant_id", nullable = false)
+//    private Integer restaurantId;
 
     @Column(name = "table_number", nullable = false)
     private String tableNumber;

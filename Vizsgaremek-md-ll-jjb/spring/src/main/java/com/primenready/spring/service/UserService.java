@@ -50,6 +50,7 @@ public class UserService {
                 .id(saved.getId())
                 .username(saved.getUsername())
                 .email(saved.getEmail())
+                .age(saved.getAge())
                 .role(saved.getRole())
                 .build();
     }

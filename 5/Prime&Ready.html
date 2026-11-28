@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime&Ready</title>
+    <link rel="icon" type="image/png" href="logo.png.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Prime&Ready.css">
+</head>
+<body>
+
+    <!-- Legfelső navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png.png" alt="Prime & Ready Logo" class="brand-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Éttermek a közelben</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Rendelési opciók</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#elerhetoseg">Elérhetőség</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Regisztráció</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Kártyák -->
+    <div class="container my-5">
+
+        <!-- 1. sor: Napi ajánlatok -->
+        <h2 class="oldal-cim mb-4">Napi ajánlatok:</h2>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card kartyaegy">
+                    <div class="kartya-kep">
+                        <img src="1hatszin.jpg" alt="Hátszín steak">
+                    </div>
+                    <div class="card-body">
+                        <h3>Hátszín steak</h3>
+                        <p>Klasszikus, telt ízű marhahús szelet frissen sütve.</p>
+                        <span class="ar">1890 Ft</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card kartyaegy">
+                    <div class="kartya-kep">
+                        <img src="2rostelyos.jpg" alt="Rostélyos steak">
+                    </div>
+                    <div class="card-body">
+                        <h3>Rostélyos steak</h3>
+                        <p>Szaftos, enyhén márványozott marhasteak.</p>
+                        <span class="ar">2190 Ft</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card kartyaegy">
+                    <div class="kartya-kep">
+                        <img src="3belszin.jpg" alt="Bélszín steak">
+                    </div>
+                    <div class="card-body">
+                        <h3>Bélszín steak</h3>
+                        <p>Különösen puha, sovány marhahús érme.</p>
+                        <span class="ar">2490 Ft</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="szekcio-vonal">
+
+        <!-- 2. sor: Napi ajánlatok -->
+        <h2 class="oldal-cim mb-4">Napi ajánlatok:</h2>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card kartyaegy">
+                    <div class="kartya-kep">
+                        <img src="4tbone.jpg" alt="T-Bone steak">
+                    </div>
+                    <div class="card-body">
+                        <h3>T-Bone steak</h3>
+                        <p>Csontos marhasteak, amely egyesíti a hátszínt és a bélszínt.</p>
+                        <span class="ar">3290 Ft</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card kartyaegy">
+                    <div class="kartya-kep">
+                        <img src="5tomahawk.jpg" alt="Tomahawk steak">
+                    </div>
+                    <div class="card-body">
+                        <h3>Tomahawk steak</h3>
+                        <p>Vastag, szaftos rostélyos hosszú bordacsonttal tálalva.</p>
+                        <span class="ar">3590 Ft</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card kartyaegy">
+                    <div class="kartya-kep">
+                        <img src="6farto.jpg" alt="Fartő steak">
+                    </div>
+                    <div class="card-body">
+                        <h3>Fartő steak</h3>
+                        <p>Karakteres ízű, tartalmas marhaszelet.</p>
+                        <span class="ar">3890 Ft</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="szekcio-vonal">
+
+        <!-- 3. sor: Szezonális különlegességek -->
+        <h2 class="oldal-cim mb-4">Szezonális különlegességek:</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card kartyaegy">
+                    <div class="kartya-kep">
+                        <img src="hetes.jpg" alt="Wagyu Ribeye">
+                    </div>
+                    <div class="card-body">
+                        <h3>Wagyu Ribeye</h3>
+                        <p>Kivételesen márványozott, omlós japán prémium marhasteak.</p>
+                        <span class="ar">8990 Ft</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card kartyaegy">
+                    <div class="kartya-kep">
+                        <img src="nyolc.jpg" alt="Porterhouse steak">
+                    </div>
+                    <div class="card-body">
+                        <h3>Porterhouse steak</h3>
+                        <p>Extra méretű, csontos marhasteak bőséges bélszínrésszel.</p>
+                        <span class="ar">6490 Ft</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card kartyaegy">
+                    <div class="kartya-kep">
+                        <img src="kilenc.jpg" alt="Chateaubriand">
+                    </div>
+                    <div class="card-body">
+                        <h3>Chateaubriand</h3>
+                        <p>A bélszín legnemesebb, vastag középső részéből vágott különlegesség.</p>
+                        <span class="ar">7290 Ft</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Egyszerűsített lábjegyzet -->
+    <footer id="elerhetoseg" class="also-sav">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-6">
+                    <h5>ELÉRHETŐSÉG</h5>
+                    <ul>
+                        <li>jonas.janos.balazs@gmail.com</li>
+                        <li>06 20 555 0434</li>
+                        <li>7621 Pécs, Király utca 42.</li>
+                        <li>Nyitvatartás: H–V 10:00 – 22:00</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>RÓLUNK</h5>
+                    <ul>
+                        <li>A Prime&Ready története</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
